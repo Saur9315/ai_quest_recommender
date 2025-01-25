@@ -1,5 +1,4 @@
 .env
-dockerfile
 check_myver.py
 db_check.py
 model_trail_jp.py
