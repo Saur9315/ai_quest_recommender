@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leaderboard</h1>
+        <a href="/" class="nav-link">Back to Home</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Efficiency</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in leaderboard %}
+                <tr>
+                    <td>{{ row.username }}</td>
+                    <td>{{ row.efficiency }}</td>
+                    <td>{{ row.prediction }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+

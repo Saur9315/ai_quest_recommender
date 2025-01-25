@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Knowledge Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>User Knowledge Prediction</h1>
+        <a href="/" class="nav-link">Back to Home</a>
+        <a href="/leaderboard" class="nav-link">View Leaderboard</a>
+        <form id="predictionForm" action="/predict/" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username"  name="username" placeholder="Enter your username" required>
+
+            <label for="true_answer_amount">Correct Answers:</label>
+            <input type="number" id="true_answer_amount" name="true_answer_amount" placeholder="e.g. 100" required>
+
+            <label for="total_questions">Total Questions:</label>
+            <input type="number" id="total_questions" name="total_questions" placeholder="e.g. 200" required>
+
+            <label for="difficulty_encoded">Difficulty (encoded):</label>
+            <input type="number" id="difficulty_encoded" name="difficulty_encoded" placeholder="0, 1 or 2" required>
+
+            <label for="time_spent_task">Time Spent on Task:</label>
+            <input type="number" step="any" id="time_spent_task" name="time_spent_task" placeholder="e.g. 200" required>
+
+            <label for="avg_spent_time">Avg Time total:</label>
+            <input type="number" step="any" id="avg_spent_time" name="avg_spent_time" placeholder="e.g. 400" required>
+
+            <button type="submit">Predict Knowledge</button>
+        </form>
+
+        <!-- Display the prediction result -->
+        {% if prediction is defined %}
+        <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
+
