@@ -7,9 +7,10 @@ import pandas as pd
 import sqlite3
 from dotenv import load_dotenv
 import os
-from database import update_results, get_leaderboard_results
+from database import update_results, get_leaderboard_results, create_results_table
 
 
+create_results_table()
 app = FastAPI()
 
 # Mount static files (CSS, JS, images)
