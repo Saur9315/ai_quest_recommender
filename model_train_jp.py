@@ -276,6 +276,7 @@ synthetic_data['KnowledgeLevel'] = 2  # Label for synthetic data
 
 # Add the synthetic data to your original dataset
 grouped_df_ml = pd.concat([grouped_df_ml, synthetic_data])
+grouped_df_ml.to_csv('grouped_results.csv', index=False)
 
 # Feature and target split
 X = grouped_df_ml[['efficiency', 'TrueAnswerAmount', 'Total questions', 'difficulty_encoded', 'time_spent_task',
@@ -325,7 +326,6 @@ print(classification_report(y_test, y_pred))
 
 # Сохранить модель
 joblib.dump(model, 'model/trained_model2.pkl')
-
 # Сохранить стандартайзер (если он нужен для предобработки данных)
 joblib.dump(scaler, 'model/scaler2.pkl')
 
